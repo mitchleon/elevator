@@ -22,5 +22,24 @@ namespace RV_Service
         {
             return "Hello World";
         }
+
+        [WebMethod]
+        public void MovementControl()
+        {
+
+        }
+
+        [WebMethod]
+        public void DoorControl()
+        {
+
+        }
+
+        [WebMethod]
+        public void ExceptionHandling()
+        {
+
+        }
+        //test
     }
 }
