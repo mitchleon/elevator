@@ -72,6 +72,9 @@
             this.label19 = new System.Windows.Forms.Label();
             this.Person_On_Button = new System.Windows.Forms.Button();
             this.Person_Off_Button = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.Help_Text = new System.Windows.Forms.TextBox();
+            this.Helped_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -464,11 +467,40 @@
             this.Person_Off_Button.Text = "Person Off";
             this.Person_Off_Button.UseVisualStyleBackColor = true;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(15, 268);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(32, 13);
+            this.label20.TabIndex = 45;
+            this.label20.Text = "Help!";
+            // 
+            // Help_Text
+            // 
+            this.Help_Text.Location = new System.Drawing.Point(97, 268);
+            this.Help_Text.Name = "Help_Text";
+            this.Help_Text.Size = new System.Drawing.Size(100, 20);
+            this.Help_Text.TabIndex = 46;
+            this.Help_Text.Text = "No";
+            // 
+            // Helped_Button
+            // 
+            this.Helped_Button.Location = new System.Drawing.Point(97, 295);
+            this.Helped_Button.Name = "Helped_Button";
+            this.Helped_Button.Size = new System.Drawing.Size(75, 23);
+            this.Helped_Button.TabIndex = 47;
+            this.Helped_Button.Text = "Help Given";
+            this.Helped_Button.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(461, 451);
+            this.Controls.Add(this.Helped_Button);
+            this.Controls.Add(this.Help_Text);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.Person_Off_Button);
             this.Controls.Add(this.Person_On_Button);
             this.Controls.Add(this.label19);
@@ -566,6 +598,9 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button Person_On_Button;
         private System.Windows.Forms.Button Person_Off_Button;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox Help_Text;
+        private System.Windows.Forms.Button Helped_Button;
     }
 }
 
