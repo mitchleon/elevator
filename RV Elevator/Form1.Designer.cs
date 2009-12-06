@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.Door_Status_Text = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -121,16 +122,16 @@
             this.label39 = new System.Windows.Forms.Label();
             this.Door_Status_Text_2 = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label41 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 124);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Door Status:";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 97;
             // 
             // Door_Status_Text
             // 
@@ -246,6 +247,7 @@
             this.Open_Button.TabIndex = 13;
             this.Open_Button.Text = "Open Door";
             this.Open_Button.UseVisualStyleBackColor = true;
+            this.Open_Button.Click += new System.EventHandler(this.Open_Button_Click);
             // 
             // Close_Button
             // 
@@ -264,6 +266,7 @@
             this.Help_Button.TabIndex = 15;
             this.Help_Button.Text = "Call for Help";
             this.Help_Button.UseVisualStyleBackColor = true;
+            this.Help_Button.Click += new System.EventHandler(this.Help_Button_Click);
             // 
             // label7
             // 
@@ -479,7 +482,7 @@
             // 
             // Add_Elevator
             // 
-            this.Add_Elevator.Location = new System.Drawing.Point(13, 416);
+            this.Add_Elevator.Location = new System.Drawing.Point(12, 443);
             this.Add_Elevator.Name = "Add_Elevator";
             this.Add_Elevator.Size = new System.Drawing.Size(137, 23);
             this.Add_Elevator.TabIndex = 41;
@@ -490,7 +493,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(15, 329);
+            this.label19.Location = new System.Drawing.Point(12, 398);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(126, 13);
             this.label19.TabIndex = 42;
@@ -498,7 +501,7 @@
             // 
             // Person_On_Button
             // 
-            this.Person_On_Button.Location = new System.Drawing.Point(15, 358);
+            this.Person_On_Button.Location = new System.Drawing.Point(12, 414);
             this.Person_On_Button.Name = "Person_On_Button";
             this.Person_On_Button.Size = new System.Drawing.Size(75, 23);
             this.Person_On_Button.TabIndex = 43;
@@ -507,7 +510,7 @@
             // 
             // Person_Off_Button
             // 
-            this.Person_Off_Button.Location = new System.Drawing.Point(97, 358);
+            this.Person_Off_Button.Location = new System.Drawing.Point(94, 414);
             this.Person_Off_Button.Name = "Person_Off_Button";
             this.Person_Off_Button.Size = new System.Drawing.Size(75, 23);
             this.Person_Off_Button.TabIndex = 44;
@@ -539,6 +542,7 @@
             this.Helped_Button.TabIndex = 47;
             this.Helped_Button.Text = "Help Given";
             this.Helped_Button.UseVisualStyleBackColor = true;
+            this.Helped_Button.Click += new System.EventHandler(this.Helped_Button_Click);
             // 
             // Helped_Button_2
             // 
@@ -994,11 +998,26 @@
             this.label40.Text = "Door Status:";
             this.label40.Visible = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(15, 124);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(66, 13);
+            this.label41.TabIndex = 98;
+            this.label41.Text = "Door Status:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(865, 478);
+            this.Controls.Add(this.label41);
             this.Controls.Add(this.Helped_Button_2);
             this.Controls.Add(this.Help_Text2);
             this.Controls.Add(this.label21);
@@ -1194,6 +1213,8 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TextBox Door_Status_Text_2;
         private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label41;
     }
 }
 

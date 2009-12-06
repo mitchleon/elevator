@@ -24,21 +24,29 @@ namespace RV_Service
         }
 
         [WebMethod]
-        public void MovementControl()
+        public void MovementControl() //tye
         {
 
         }
 
         [WebMethod]
-        public void DoorControl()
+        public void DoorControl() //tye
         {
 
         }
 
         [WebMethod]
-        public void ExceptionHandling()
+        public void ExceptionHandling() //tye
         {
 
+        }
+
+        [WebMethod]
+        public bool Alarm(int weight)
+        {
+            if (weight > 1000)
+                return true;
+            else return false;
         }
         //test
     }
