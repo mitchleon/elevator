@@ -32,7 +32,7 @@
             this.Door_Status_Text = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Floor_Text = new System.Windows.Forms.TextBox();
             this.Floor1_Button = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.Floor2_Button = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@
             this.Direction_Text = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Password_Text = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -75,6 +75,52 @@
             this.label20 = new System.Windows.Forms.Label();
             this.Help_Text = new System.Windows.Forms.TextBox();
             this.Helped_Button = new System.Windows.Forms.Button();
+            this.Helped_Button_2 = new System.Windows.Forms.Button();
+            this.Help_Text2 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.Person_Off_Button_2 = new System.Windows.Forms.Button();
+            this.Person_On_Button_2 = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.Up3_Button_2 = new System.Windows.Forms.Button();
+            this.Up2_Button_2 = new System.Windows.Forms.Button();
+            this.Up1_Button_2 = new System.Windows.Forms.Button();
+            this.Up4_Button_2 = new System.Windows.Forms.Button();
+            this.Down4_Button_2 = new System.Windows.Forms.Button();
+            this.Down3_Button_2 = new System.Windows.Forms.Button();
+            this.Down2_Button_2 = new System.Windows.Forms.Button();
+            this.Down5_Button_2 = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.Password_Text_2 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.Direction_Text_2 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.Wait_Time_Text_2 = new System.Windows.Forms.TextBox();
+            this.Weight_Text_2 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.Help_Button_2 = new System.Windows.Forms.Button();
+            this.Close_Button_2 = new System.Windows.Forms.Button();
+            this.Open_Button_2 = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.Floor5_Button_2 = new System.Windows.Forms.Button();
+            this.Floor4_Button_2 = new System.Windows.Forms.Button();
+            this.Floor3_Button_2 = new System.Windows.Forms.Button();
+            this.Floor2_Button_2 = new System.Windows.Forms.Button();
+            this.label37 = new System.Windows.Forms.Label();
+            this.Floor1_Button_2 = new System.Windows.Forms.Button();
+            this.Floor_Text_2 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.Door_Status_Text_2 = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -112,13 +158,13 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Status Indicators";
             // 
-            // textBox1
+            // Floor_Text
             // 
-            this.textBox1.Location = new System.Drawing.Point(97, 158);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "1";
+            this.Floor_Text.Location = new System.Drawing.Point(97, 158);
+            this.Floor_Text.Name = "Floor_Text";
+            this.Floor_Text.Size = new System.Drawing.Size(100, 20);
+            this.Floor_Text.TabIndex = 4;
+            this.Floor_Text.Text = "1";
             // 
             // Floor1_Button
             // 
@@ -297,13 +343,13 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "5th Floor\r\nAccess Password";
             // 
-            // textBox2
+            // Password_Text
             // 
-            this.textBox2.Location = new System.Drawing.Point(97, 95);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 25;
-            this.textBox2.Text = "Password";
+            this.Password_Text.Location = new System.Drawing.Point(97, 95);
+            this.Password_Text.Name = "Password_Text";
+            this.Password_Text.Size = new System.Drawing.Size(100, 20);
+            this.Password_Text.TabIndex = 25;
+            this.Password_Text.Text = "Password";
             // 
             // label13
             // 
@@ -439,6 +485,7 @@
             this.Add_Elevator.TabIndex = 41;
             this.Add_Elevator.Text = "Add Additional Elevator";
             this.Add_Elevator.UseVisualStyleBackColor = true;
+            this.Add_Elevator.Click += new System.EventHandler(this.Add_Elevator_Click);
             // 
             // label19
             // 
@@ -493,11 +540,511 @@
             this.Helped_Button.Text = "Help Given";
             this.Helped_Button.UseVisualStyleBackColor = true;
             // 
+            // Helped_Button_2
+            // 
+            this.Helped_Button_2.Location = new System.Drawing.Point(542, 295);
+            this.Helped_Button_2.Name = "Helped_Button_2";
+            this.Helped_Button_2.Size = new System.Drawing.Size(75, 23);
+            this.Helped_Button_2.TabIndex = 96;
+            this.Helped_Button_2.Text = "Help Given";
+            this.Helped_Button_2.UseVisualStyleBackColor = true;
+            this.Helped_Button_2.Visible = false;
+            // 
+            // Help_Text2
+            // 
+            this.Help_Text2.Location = new System.Drawing.Point(542, 268);
+            this.Help_Text2.Name = "Help_Text2";
+            this.Help_Text2.Size = new System.Drawing.Size(100, 20);
+            this.Help_Text2.TabIndex = 95;
+            this.Help_Text2.Text = "No";
+            this.Help_Text2.Visible = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(460, 268);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(32, 13);
+            this.label21.TabIndex = 94;
+            this.label21.Text = "Help!";
+            this.label21.Visible = false;
+            // 
+            // Person_Off_Button_2
+            // 
+            this.Person_Off_Button_2.Location = new System.Drawing.Point(542, 358);
+            this.Person_Off_Button_2.Name = "Person_Off_Button_2";
+            this.Person_Off_Button_2.Size = new System.Drawing.Size(75, 23);
+            this.Person_Off_Button_2.TabIndex = 93;
+            this.Person_Off_Button_2.Text = "Person Off";
+            this.Person_Off_Button_2.UseVisualStyleBackColor = true;
+            this.Person_Off_Button_2.Visible = false;
+            // 
+            // Person_On_Button_2
+            // 
+            this.Person_On_Button_2.Location = new System.Drawing.Point(460, 358);
+            this.Person_On_Button_2.Name = "Person_On_Button_2";
+            this.Person_On_Button_2.Size = new System.Drawing.Size(75, 23);
+            this.Person_On_Button_2.TabIndex = 92;
+            this.Person_On_Button_2.Text = "Person On";
+            this.Person_On_Button_2.UseVisualStyleBackColor = true;
+            this.Person_On_Button_2.Visible = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(460, 329);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(126, 13);
+            this.label22.TabIndex = 91;
+            this.label22.Text = "Add/Remove Occupants";
+            this.label22.Visible = false;
+            // 
+            // Up3_Button_2
+            // 
+            this.Up3_Button_2.Location = new System.Drawing.Point(763, 141);
+            this.Up3_Button_2.Name = "Up3_Button_2";
+            this.Up3_Button_2.Size = new System.Drawing.Size(35, 23);
+            this.Up3_Button_2.TabIndex = 89;
+            this.Up3_Button_2.Text = "Up";
+            this.Up3_Button_2.UseVisualStyleBackColor = true;
+            this.Up3_Button_2.Visible = false;
+            // 
+            // Up2_Button_2
+            // 
+            this.Up2_Button_2.Location = new System.Drawing.Point(763, 170);
+            this.Up2_Button_2.Name = "Up2_Button_2";
+            this.Up2_Button_2.Size = new System.Drawing.Size(35, 23);
+            this.Up2_Button_2.TabIndex = 88;
+            this.Up2_Button_2.Text = "Up";
+            this.Up2_Button_2.UseVisualStyleBackColor = true;
+            this.Up2_Button_2.Visible = false;
+            // 
+            // Up1_Button_2
+            // 
+            this.Up1_Button_2.Location = new System.Drawing.Point(763, 199);
+            this.Up1_Button_2.Name = "Up1_Button_2";
+            this.Up1_Button_2.Size = new System.Drawing.Size(35, 23);
+            this.Up1_Button_2.TabIndex = 87;
+            this.Up1_Button_2.Text = "Up";
+            this.Up1_Button_2.UseVisualStyleBackColor = true;
+            this.Up1_Button_2.Visible = false;
+            // 
+            // Up4_Button_2
+            // 
+            this.Up4_Button_2.Location = new System.Drawing.Point(763, 112);
+            this.Up4_Button_2.Name = "Up4_Button_2";
+            this.Up4_Button_2.Size = new System.Drawing.Size(35, 23);
+            this.Up4_Button_2.TabIndex = 86;
+            this.Up4_Button_2.Text = "Up";
+            this.Up4_Button_2.UseVisualStyleBackColor = true;
+            this.Up4_Button_2.Visible = false;
+            // 
+            // Down4_Button_2
+            // 
+            this.Down4_Button_2.Location = new System.Drawing.Point(713, 112);
+            this.Down4_Button_2.Name = "Down4_Button_2";
+            this.Down4_Button_2.Size = new System.Drawing.Size(44, 23);
+            this.Down4_Button_2.TabIndex = 85;
+            this.Down4_Button_2.Text = "down";
+            this.Down4_Button_2.UseVisualStyleBackColor = true;
+            this.Down4_Button_2.Visible = false;
+            // 
+            // Down3_Button_2
+            // 
+            this.Down3_Button_2.Location = new System.Drawing.Point(713, 141);
+            this.Down3_Button_2.Name = "Down3_Button_2";
+            this.Down3_Button_2.Size = new System.Drawing.Size(44, 23);
+            this.Down3_Button_2.TabIndex = 84;
+            this.Down3_Button_2.Text = "down";
+            this.Down3_Button_2.UseVisualStyleBackColor = true;
+            this.Down3_Button_2.Visible = false;
+            // 
+            // Down2_Button_2
+            // 
+            this.Down2_Button_2.Location = new System.Drawing.Point(713, 170);
+            this.Down2_Button_2.Name = "Down2_Button_2";
+            this.Down2_Button_2.Size = new System.Drawing.Size(44, 23);
+            this.Down2_Button_2.TabIndex = 83;
+            this.Down2_Button_2.Text = "down";
+            this.Down2_Button_2.UseVisualStyleBackColor = true;
+            this.Down2_Button_2.Visible = false;
+            // 
+            // Down5_Button_2
+            // 
+            this.Down5_Button_2.Location = new System.Drawing.Point(713, 83);
+            this.Down5_Button_2.Name = "Down5_Button_2";
+            this.Down5_Button_2.Size = new System.Drawing.Size(44, 23);
+            this.Down5_Button_2.TabIndex = 82;
+            this.Down5_Button_2.Text = "down";
+            this.Down5_Button_2.UseVisualStyleBackColor = true;
+            this.Down5_Button_2.Visible = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(659, 199);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(47, 13);
+            this.label23.TabIndex = 81;
+            this.label23.Text = "1st Floor";
+            this.label23.Visible = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(659, 170);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(51, 13);
+            this.label24.TabIndex = 80;
+            this.label24.Text = "2nd Floor";
+            this.label24.Visible = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(659, 141);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(48, 13);
+            this.label25.TabIndex = 79;
+            this.label25.Text = "3rd Floor";
+            this.label25.Visible = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(659, 112);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(48, 13);
+            this.label26.TabIndex = 78;
+            this.label26.Text = "4th Floor";
+            this.label26.Visible = false;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(659, 83);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(48, 13);
+            this.label27.TabIndex = 77;
+            this.label27.Text = "5th Floor";
+            this.label27.Visible = false;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(668, 67);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(89, 13);
+            this.label28.TabIndex = 76;
+            this.label28.Text = "Request Elevator";
+            this.label28.Visible = false;
+            // 
+            // Password_Text_2
+            // 
+            this.Password_Text_2.Location = new System.Drawing.Point(542, 95);
+            this.Password_Text_2.Name = "Password_Text_2";
+            this.Password_Text_2.Size = new System.Drawing.Size(100, 20);
+            this.Password_Text_2.TabIndex = 75;
+            this.Password_Text_2.Text = "Password";
+            this.Password_Text_2.Visible = false;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(445, 95);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(91, 26);
+            this.label29.TabIndex = 74;
+            this.label29.Text = "5th Floor\r\nAccess Password";
+            this.label29.Visible = false;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(735, 257);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(91, 39);
+            this.label30.TabIndex = 73;
+            this.label30.Text = "5th Floor requires \r\nAccess control \r\npassword";
+            this.label30.Visible = false;
+            // 
+            // Direction_Text_2
+            // 
+            this.Direction_Text_2.Location = new System.Drawing.Point(542, 243);
+            this.Direction_Text_2.Name = "Direction_Text_2";
+            this.Direction_Text_2.Size = new System.Drawing.Size(100, 20);
+            this.Direction_Text_2.TabIndex = 72;
+            this.Direction_Text_2.Text = "Stopped";
+            this.Direction_Text_2.Visible = false;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(457, 243);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(49, 13);
+            this.label31.TabIndex = 71;
+            this.label31.Text = "Direction";
+            this.label31.Visible = false;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(457, 216);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(69, 13);
+            this.label32.TabIndex = 70;
+            this.label32.Text = "Waiting Time";
+            this.label32.Visible = false;
+            // 
+            // Wait_Time_Text_2
+            // 
+            this.Wait_Time_Text_2.Location = new System.Drawing.Point(542, 216);
+            this.Wait_Time_Text_2.Name = "Wait_Time_Text_2";
+            this.Wait_Time_Text_2.Size = new System.Drawing.Size(100, 20);
+            this.Wait_Time_Text_2.TabIndex = 69;
+            this.Wait_Time_Text_2.Text = "0";
+            this.Wait_Time_Text_2.Visible = false;
+            // 
+            // Weight_Text_2
+            // 
+            this.Weight_Text_2.Location = new System.Drawing.Point(542, 189);
+            this.Weight_Text_2.Name = "Weight_Text_2";
+            this.Weight_Text_2.Size = new System.Drawing.Size(100, 20);
+            this.Weight_Text_2.TabIndex = 68;
+            this.Weight_Text_2.Text = "100";
+            this.Weight_Text_2.Visible = false;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(457, 189);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(41, 13);
+            this.label33.TabIndex = 67;
+            this.label33.Text = "Weight";
+            this.label33.Visible = false;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(651, 385);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(72, 13);
+            this.label34.TabIndex = 66;
+            this.label34.Text = "Request Help";
+            this.label34.Visible = false;
+            // 
+            // Help_Button_2
+            // 
+            this.Help_Button_2.Location = new System.Drawing.Point(654, 414);
+            this.Help_Button_2.Name = "Help_Button_2";
+            this.Help_Button_2.Size = new System.Drawing.Size(75, 23);
+            this.Help_Button_2.TabIndex = 65;
+            this.Help_Button_2.Text = "Call for Help";
+            this.Help_Button_2.UseVisualStyleBackColor = true;
+            this.Help_Button_2.Visible = false;
+            // 
+            // Close_Button_2
+            // 
+            this.Close_Button_2.Location = new System.Drawing.Point(654, 328);
+            this.Close_Button_2.Name = "Close_Button_2";
+            this.Close_Button_2.Size = new System.Drawing.Size(75, 23);
+            this.Close_Button_2.TabIndex = 64;
+            this.Close_Button_2.Text = "Close Door";
+            this.Close_Button_2.UseVisualStyleBackColor = true;
+            this.Close_Button_2.Visible = false;
+            // 
+            // Open_Button_2
+            // 
+            this.Open_Button_2.Location = new System.Drawing.Point(654, 298);
+            this.Open_Button_2.Name = "Open_Button_2";
+            this.Open_Button_2.Size = new System.Drawing.Size(75, 23);
+            this.Open_Button_2.TabIndex = 63;
+            this.Open_Button_2.Text = "Open Door";
+            this.Open_Button_2.UseVisualStyleBackColor = true;
+            this.Open_Button_2.Visible = false;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(651, 267);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(66, 13);
+            this.label35.TabIndex = 62;
+            this.label35.Text = "Door Control";
+            this.label35.Visible = false;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(749, 242);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(77, 13);
+            this.label36.TabIndex = 61;
+            this.label36.Text = "Floor Selection";
+            this.label36.Visible = false;
+            // 
+            // Floor5_Button_2
+            // 
+            this.Floor5_Button_2.Location = new System.Drawing.Point(751, 299);
+            this.Floor5_Button_2.Name = "Floor5_Button_2";
+            this.Floor5_Button_2.Size = new System.Drawing.Size(75, 23);
+            this.Floor5_Button_2.TabIndex = 60;
+            this.Floor5_Button_2.Text = "5th Floor";
+            this.Floor5_Button_2.UseVisualStyleBackColor = true;
+            this.Floor5_Button_2.Visible = false;
+            // 
+            // Floor4_Button_2
+            // 
+            this.Floor4_Button_2.Location = new System.Drawing.Point(751, 328);
+            this.Floor4_Button_2.Name = "Floor4_Button_2";
+            this.Floor4_Button_2.Size = new System.Drawing.Size(75, 23);
+            this.Floor4_Button_2.TabIndex = 59;
+            this.Floor4_Button_2.Text = "4th Floor";
+            this.Floor4_Button_2.UseVisualStyleBackColor = true;
+            this.Floor4_Button_2.Visible = false;
+            // 
+            // Floor3_Button_2
+            // 
+            this.Floor3_Button_2.Location = new System.Drawing.Point(751, 357);
+            this.Floor3_Button_2.Name = "Floor3_Button_2";
+            this.Floor3_Button_2.Size = new System.Drawing.Size(75, 23);
+            this.Floor3_Button_2.TabIndex = 58;
+            this.Floor3_Button_2.Text = "3rd Floor";
+            this.Floor3_Button_2.UseVisualStyleBackColor = true;
+            this.Floor3_Button_2.Visible = false;
+            this.Floor3_Button_2.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // Floor2_Button_2
+            // 
+            this.Floor2_Button_2.Location = new System.Drawing.Point(751, 386);
+            this.Floor2_Button_2.Name = "Floor2_Button_2";
+            this.Floor2_Button_2.Size = new System.Drawing.Size(75, 23);
+            this.Floor2_Button_2.TabIndex = 57;
+            this.Floor2_Button_2.Text = "2nd Floor";
+            this.Floor2_Button_2.UseVisualStyleBackColor = true;
+            this.Floor2_Button_2.Visible = false;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(670, 32);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(108, 13);
+            this.label37.TabIndex = 56;
+            this.label37.Text = "2nd Elevator Controls";
+            this.label37.Visible = false;
+            // 
+            // Floor1_Button_2
+            // 
+            this.Floor1_Button_2.Location = new System.Drawing.Point(751, 415);
+            this.Floor1_Button_2.Name = "Floor1_Button_2";
+            this.Floor1_Button_2.Size = new System.Drawing.Size(75, 23);
+            this.Floor1_Button_2.TabIndex = 55;
+            this.Floor1_Button_2.Text = "1st Floor";
+            this.Floor1_Button_2.UseVisualStyleBackColor = true;
+            this.Floor1_Button_2.Visible = false;
+            // 
+            // Floor_Text_2
+            // 
+            this.Floor_Text_2.Location = new System.Drawing.Point(542, 158);
+            this.Floor_Text_2.Name = "Floor_Text_2";
+            this.Floor_Text_2.Size = new System.Drawing.Size(100, 20);
+            this.Floor_Text_2.TabIndex = 54;
+            this.Floor_Text_2.Text = "1";
+            this.Floor_Text_2.Visible = false;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(488, 35);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(149, 13);
+            this.label38.TabIndex = 53;
+            this.label38.Text = "2nd Elevator Status Indicators";
+            this.label38.Visible = false;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(457, 158);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(60, 13);
+            this.label39.TabIndex = 52;
+            this.label39.Text = "Floor (1-5) :";
+            this.label39.Visible = false;
+            // 
+            // Door_Status_Text_2
+            // 
+            this.Door_Status_Text_2.Location = new System.Drawing.Point(542, 124);
+            this.Door_Status_Text_2.Name = "Door_Status_Text_2";
+            this.Door_Status_Text_2.Size = new System.Drawing.Size(100, 20);
+            this.Door_Status_Text_2.TabIndex = 51;
+            this.Door_Status_Text_2.Text = "Closed";
+            this.Door_Status_Text_2.Visible = false;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(457, 124);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(66, 13);
+            this.label40.TabIndex = 50;
+            this.label40.Text = "Door Status:";
+            this.label40.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 451);
+            this.ClientSize = new System.Drawing.Size(865, 478);
+            this.Controls.Add(this.Helped_Button_2);
+            this.Controls.Add(this.Help_Text2);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.Person_Off_Button_2);
+            this.Controls.Add(this.Person_On_Button_2);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.Up3_Button_2);
+            this.Controls.Add(this.Up2_Button_2);
+            this.Controls.Add(this.Up1_Button_2);
+            this.Controls.Add(this.Up4_Button_2);
+            this.Controls.Add(this.Down4_Button_2);
+            this.Controls.Add(this.Down3_Button_2);
+            this.Controls.Add(this.Down2_Button_2);
+            this.Controls.Add(this.Down5_Button_2);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.Password_Text_2);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.Direction_Text_2);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.label32);
+            this.Controls.Add(this.Wait_Time_Text_2);
+            this.Controls.Add(this.Weight_Text_2);
+            this.Controls.Add(this.label33);
+            this.Controls.Add(this.label34);
+            this.Controls.Add(this.Help_Button_2);
+            this.Controls.Add(this.Close_Button_2);
+            this.Controls.Add(this.Open_Button_2);
+            this.Controls.Add(this.label35);
+            this.Controls.Add(this.label36);
+            this.Controls.Add(this.Floor5_Button_2);
+            this.Controls.Add(this.Floor4_Button_2);
+            this.Controls.Add(this.Floor3_Button_2);
+            this.Controls.Add(this.Floor2_Button_2);
+            this.Controls.Add(this.label37);
+            this.Controls.Add(this.Floor1_Button_2);
+            this.Controls.Add(this.Floor_Text_2);
+            this.Controls.Add(this.label38);
+            this.Controls.Add(this.label39);
+            this.Controls.Add(this.Door_Status_Text_2);
+            this.Controls.Add(this.label40);
             this.Controls.Add(this.Helped_Button);
             this.Controls.Add(this.Help_Text);
             this.Controls.Add(this.label20);
@@ -519,7 +1066,7 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.Password_Text);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Direction_Text);
@@ -540,7 +1087,7 @@
             this.Controls.Add(this.Floor2_Button);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Floor1_Button);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Floor_Text);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Door_Status_Text);
@@ -558,7 +1105,7 @@
         private System.Windows.Forms.TextBox Door_Status_Text;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Floor_Text;
         private System.Windows.Forms.Button Floor1_Button;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Floor2_Button;
@@ -579,7 +1126,7 @@
         private System.Windows.Forms.TextBox Direction_Text;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Password_Text;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
@@ -601,6 +1148,52 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox Help_Text;
         private System.Windows.Forms.Button Helped_Button;
+        private System.Windows.Forms.Button Helped_Button_2;
+        private System.Windows.Forms.TextBox Help_Text2;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button Person_Off_Button_2;
+        private System.Windows.Forms.Button Person_On_Button_2;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button Up3_Button_2;
+        private System.Windows.Forms.Button Up2_Button_2;
+        private System.Windows.Forms.Button Up1_Button_2;
+        private System.Windows.Forms.Button Up4_Button_2;
+        private System.Windows.Forms.Button Down4_Button_2;
+        private System.Windows.Forms.Button Down3_Button_2;
+        private System.Windows.Forms.Button Down2_Button_2;
+        private System.Windows.Forms.Button Down5_Button_2;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox Password_Text_2;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox Direction_Text_2;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox Wait_Time_Text_2;
+        private System.Windows.Forms.TextBox Weight_Text_2;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button Help_Button_2;
+        private System.Windows.Forms.Button Close_Button_2;
+        private System.Windows.Forms.Button Open_Button_2;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Button Floor5_Button_2;
+        private System.Windows.Forms.Button Floor4_Button_2;
+        private System.Windows.Forms.Button Floor3_Button_2;
+        private System.Windows.Forms.Button Floor2_Button_2;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Button Floor1_Button_2;
+        private System.Windows.Forms.TextBox Floor_Text_2;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox Door_Status_Text_2;
+        private System.Windows.Forms.Label label40;
     }
 }
 
