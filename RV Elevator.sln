@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RV Elevator", "RV Elevator\RV Elevator.csproj", "{E16AA1B3-2B98-48A2-81C5-8C29FBA8B77B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{587D24BD-95CC-4366-8537-92EF0AB99CF6} = {587D24BD-95CC-4366-8537-92EF0AB99CF6}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RV Service", "RV Service\RV Service.csproj", "{587D24BD-95CC-4366-8537-92EF0AB99CF6}"
 EndProject

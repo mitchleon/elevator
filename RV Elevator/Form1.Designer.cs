@@ -122,8 +122,18 @@
             this.label39 = new System.Windows.Forms.Label();
             this.Door_Status_Text_2 = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerDoor1 = new System.Windows.Forms.Timer(this.components);
             this.label41 = new System.Windows.Forms.Label();
+            this.timerPeople1 = new System.Windows.Forms.Timer(this.components);
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.testpeopletext = new System.Windows.Forms.TextBox();
+            this.testdoortext = new System.Windows.Forms.TextBox();
+            this.Exception_Text1 = new System.Windows.Forms.TextBox();
+            this.Exception_Text2 = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -257,6 +267,7 @@
             this.Close_Button.TabIndex = 14;
             this.Close_Button.Text = "Close Door";
             this.Close_Button.UseVisualStyleBackColor = true;
+            this.Close_Button.Click += new System.EventHandler(this.Close_Button_Click);
             // 
             // Help_Button
             // 
@@ -507,6 +518,7 @@
             this.Person_On_Button.TabIndex = 43;
             this.Person_On_Button.Text = "Person On";
             this.Person_On_Button.UseVisualStyleBackColor = true;
+            this.Person_On_Button.Click += new System.EventHandler(this.Person_On_Button_Click);
             // 
             // Person_Off_Button
             // 
@@ -516,6 +528,7 @@
             this.Person_Off_Button.TabIndex = 44;
             this.Person_Off_Button.Text = "Person Off";
             this.Person_Off_Button.UseVisualStyleBackColor = true;
+            this.Person_Off_Button.Click += new System.EventHandler(this.Person_Off_Button_Click);
             // 
             // label20
             // 
@@ -998,10 +1011,10 @@
             this.label40.Text = "Door Status:";
             this.label40.Visible = false;
             // 
-            // timer1
+            // timerDoor1
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timerDoor1.Interval = 1000;
+            this.timerDoor1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label41
             // 
@@ -1012,11 +1025,98 @@
             this.label41.TabIndex = 98;
             this.label41.Text = "Door Status:";
             // 
+            // timerPeople1
+            // 
+            this.timerPeople1.Interval = 1000;
+            this.timerPeople1.Tick += new System.EventHandler(this.timerPeople1_Tick);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(12, 304);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(73, 13);
+            this.label42.TabIndex = 99;
+            this.label42.Text = "Test Counters";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(3, 321);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(40, 13);
+            this.label43.TabIndex = 100;
+            this.label43.Text = "People";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(9, 351);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(30, 13);
+            this.label44.TabIndex = 101;
+            this.label44.Text = "Door";
+            // 
+            // testpeopletext
+            // 
+            this.testpeopletext.Location = new System.Drawing.Point(46, 321);
+            this.testpeopletext.Name = "testpeopletext";
+            this.testpeopletext.Size = new System.Drawing.Size(100, 20);
+            this.testpeopletext.TabIndex = 102;
+            // 
+            // testdoortext
+            // 
+            this.testdoortext.Location = new System.Drawing.Point(46, 348);
+            this.testdoortext.Name = "testdoortext";
+            this.testdoortext.Size = new System.Drawing.Size(100, 20);
+            this.testdoortext.TabIndex = 103;
+            // 
+            // Exception_Text1
+            // 
+            this.Exception_Text1.Location = new System.Drawing.Point(236, 215);
+            this.Exception_Text1.Name = "Exception_Text1";
+            this.Exception_Text1.Size = new System.Drawing.Size(100, 20);
+            this.Exception_Text1.TabIndex = 104;
+            // 
+            // Exception_Text2
+            // 
+            this.Exception_Text2.Location = new System.Drawing.Point(648, 235);
+            this.Exception_Text2.Name = "Exception_Text2";
+            this.Exception_Text2.Size = new System.Drawing.Size(100, 20);
+            this.Exception_Text2.TabIndex = 105;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(236, 199);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(110, 13);
+            this.label45.TabIndex = 106;
+            this.label45.Text = "Exceptions Elevator 1";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(648, 216);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(110, 13);
+            this.label46.TabIndex = 107;
+            this.label46.Text = "Exceptions Elevator 2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(865, 478);
+            this.Controls.Add(this.label46);
+            this.Controls.Add(this.label45);
+            this.Controls.Add(this.Exception_Text2);
+            this.Controls.Add(this.Exception_Text1);
+            this.Controls.Add(this.testdoortext);
+            this.Controls.Add(this.testpeopletext);
+            this.Controls.Add(this.label44);
+            this.Controls.Add(this.label43);
+            this.Controls.Add(this.label42);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.Helped_Button_2);
             this.Controls.Add(this.Help_Text2);
@@ -1213,8 +1313,18 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TextBox Door_Status_Text_2;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerDoor1;
         private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Timer timerPeople1;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox testpeopletext;
+        private System.Windows.Forms.TextBox testdoortext;
+        private System.Windows.Forms.TextBox Exception_Text1;
+        private System.Windows.Forms.TextBox Exception_Text2;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
     }
 }
 
