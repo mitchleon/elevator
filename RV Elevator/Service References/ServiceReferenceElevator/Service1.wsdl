@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovementControl">
+        <s:complexType />
+      </s:element>
+      <s:element name="MovementControlResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DoorControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="open" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="floor" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="peopletime" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoorControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DoorControlResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExceptionHandling">
+        <s:complexType />
+      </s:element>
+      <s:element name="ExceptionHandlingResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Alarm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="time" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlarmResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="MovementControlSoapIn">
+    <wsdl:part name="parameters" element="tns:MovementControl" />
+  </wsdl:message>
+  <wsdl:message name="MovementControlSoapOut">
+    <wsdl:part name="parameters" element="tns:MovementControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoorControlSoapIn">
+    <wsdl:part name="parameters" element="tns:DoorControl" />
+  </wsdl:message>
+  <wsdl:message name="DoorControlSoapOut">
+    <wsdl:part name="parameters" element="tns:DoorControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExceptionHandlingSoapIn">
+    <wsdl:part name="parameters" element="tns:ExceptionHandling" />
+  </wsdl:message>
+  <wsdl:message name="ExceptionHandlingSoapOut">
+    <wsdl:part name="parameters" element="tns:ExceptionHandlingResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlarmSoapIn">
+    <wsdl:part name="parameters" element="tns:Alarm" />
+  </wsdl:message>
+  <wsdl:message name="AlarmSoapOut">
+    <wsdl:part name="parameters" element="tns:AlarmResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MovementControl">
+      <wsdl:input message="tns:MovementControlSoapIn" />
+      <wsdl:output message="tns:MovementControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoorControl">
+      <wsdl:input message="tns:DoorControlSoapIn" />
+      <wsdl:output message="tns:DoorControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExceptionHandling">
+      <wsdl:input message="tns:ExceptionHandlingSoapIn" />
+      <wsdl:output message="tns:ExceptionHandlingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Alarm">
+      <wsdl:input message="tns:AlarmSoapIn" />
+      <wsdl:output message="tns:AlarmSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovementControl">
+      <soap:operation soapAction="http://tempuri.org/MovementControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoorControl">
+      <soap:operation soapAction="http://tempuri.org/DoorControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExceptionHandling">
+      <soap:operation soapAction="http://tempuri.org/ExceptionHandling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Alarm">
+      <soap:operation soapAction="http://tempuri.org/Alarm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovementControl">
+      <soap12:operation soapAction="http://tempuri.org/MovementControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoorControl">
+      <soap12:operation soapAction="http://tempuri.org/DoorControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExceptionHandling">
+      <soap12:operation soapAction="http://tempuri.org/ExceptionHandling" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Alarm">
+      <soap12:operation soapAction="http://tempuri.org/Alarm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://localhost:60349/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://localhost:60349/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -113,6 +113,65 @@ namespace RV_Elevator
            
         }
 
+        private void Close_Button_Click(object sender, EventArgs e)
+        {
+            if (ElevatorService.DoorControl(0, Convert.ToDouble(Floor_Text.Text.ToString()), PeopleTimer1) == true)
+            {
+                DoorTimer1 = 10;
+                timerDoor1.Start();
+            }
+            else
+            {
+                while (PeopleTimer1 > 0) ;
+                DoorTimer1 = 10;
+                timerDoor1.Start();
+            }
+
+        }
+
+        
+
+        private void Person_On_Button_Click(object sender, EventArgs e)
+        {
+            PeopleTimer1 += 10;
+            int weight = Convert.ToInt32(Weight_Text.Text.ToString());
+            weight += 100;
+            Weight_Text.Text = weight.ToString();
+            timerPeople1.Start(); //each person takes 10seconds to get on
+            if (ElevatorService.Alarm(weight,0))
+            {
+            SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\tye\Documents\Visual Studio 2008\Projects\elevatorrepo\fat.wav");
+            simpleSound.PlayLooping();
+            }
+        }
+
+        private void Person_Off_Button_Click(object sender, EventArgs e)
+        {
+            PeopleTimer1 += 10;
+            int weight = Convert.ToInt32(Weight_Text.Text.ToString());
+
+            if (weight > 100) weight -= 100;  //100 is weight of elevatore when empty
+            timerPeople1.Start(); //each person takes 10 seconds to leave
+            Weight_Text.Text = weight.ToString();
+            if (!ElevatorService.Alarm(weight, 0))
+            {
+                SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\tye\Documents\Visual Studio 2008\Projects\elevatorrepo\fat.wav");
+                simpleSound.Stop();
+            }
+        }
+
+        private void timerPeople1_Tick(object sender, EventArgs e)
+        {
+            PeopleTimer1--;
+            testpeopletext.Text = PeopleTimer1.ToString();
+            Invalidate();
+            if (PeopleTimer1 == 0)
+            {
+                timerPeople1.Stop();
+                Invalidate();
+            }
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             DoorTimer1--;
@@ -132,58 +191,13 @@ namespace RV_Elevator
                 // Beep
                 if (Door_Status_Text.Text.Equals("Closed"))
                 {
-                Door_Status_Text.Text = "Open";
+                    Door_Status_Text.Text = "Open";
                 }
                 else Door_Status_Text.Text = "Closed";
             }
         }
 
-        private void Person_On_Button_Click(object sender, EventArgs e)
-        {
-            PeopleTimer1 += 10;
-            int weight = Convert.ToInt32(Weight_Text.Text.ToString());
-            weight += 100;
-            Weight_Text.Text = weight.ToString();
-            timerPeople1.Start(); //each person takes 10seconds to get on
-        }
-
-        private void timerPeople1_Tick(object sender, EventArgs e)
-        {
-            PeopleTimer1--;
-            testpeopletext.Text = PeopleTimer1.ToString();
-            Invalidate();
-            if (PeopleTimer1 == 0)
-            {
-                timerPeople1.Stop();
-                Invalidate();
-            }
-        }
-
-        private void Close_Button_Click(object sender, EventArgs e)
-        {
-            if (ElevatorService.DoorControl(0, Convert.ToDouble(Floor_Text.Text.ToString()), PeopleTimer1) == true)
-            {
-                DoorTimer1 = 10;
-                timerDoor1.Start();
-            }
-            else
-            {
-                while (PeopleTimer1 > 0) ;
-                DoorTimer1 = 10;
-                timerDoor1.Start();
-            }
-
-        }
-
-        private void Person_Off_Button_Click(object sender, EventArgs e)
-        {
-            PeopleTimer1 += 10;
-            int weight = Convert.ToInt32(Weight_Text.Text.ToString());
-
-            if (weight >100) weight -= 100;  //100 is weight of elevatore when empty
-            timerPeople1.Start(); //each person takes 10 seconds to leave
-            Weight_Text.Text = weight.ToString();
-        }
+        
     }
 
 

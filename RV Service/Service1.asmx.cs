@@ -77,9 +77,11 @@ namespace RV_Service
         }
 
         [WebMethod]
-        public bool Alarm(int weight)
+        public bool Alarm(int weight, int time)
         {
-            if (weight > 1000)
+            if (weight > 1500)
+                return true;
+            else if (time > 1000)
                 return true;
             else return false;
         }
