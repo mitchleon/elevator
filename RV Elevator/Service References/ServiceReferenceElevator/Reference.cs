@@ -9,7 +9,16 @@
 //------------------------------------------------------------------------------
 
 namespace RV_Elevator.ServiceReferenceElevator {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfInt", Namespace="http://tempuri.org/", ItemName="int")]
+    [System.SerializableAttribute()]
+    public class ArrayOfInt : System.Collections.Generic.List<int> {
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceElevator.Service1Soap")]
@@ -19,8 +28,9 @@ namespace RV_Elevator.ServiceReferenceElevator {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
         RV_Elevator.ServiceReferenceElevator.HelloWorldResponse HelloWorld(RV_Elevator.ServiceReferenceElevator.HelloWorldRequest request);
         
+        // CODEGEN: Generating message contract since element name requests from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MovementControl", ReplyAction="*")]
-        void MovementControl();
+        RV_Elevator.ServiceReferenceElevator.MovementControlResponse MovementControl(RV_Elevator.ServiceReferenceElevator.MovementControlRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DoorControl", ReplyAction="*")]
         bool DoorControl(int open, double floor, int peopletime);
@@ -30,6 +40,9 @@ namespace RV_Elevator.ServiceReferenceElevator {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Alarm", ReplyAction="*")]
         bool Alarm(int weight, int time);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Sensor", ReplyAction="*")]
+        bool Sensor(int people);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -89,6 +102,78 @@ namespace RV_Elevator.ServiceReferenceElevator {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class MovementControlRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="MovementControl", Namespace="http://tempuri.org/", Order=0)]
+        public RV_Elevator.ServiceReferenceElevator.MovementControlRequestBody Body;
+        
+        public MovementControlRequest() {
+        }
+        
+        public MovementControlRequest(RV_Elevator.ServiceReferenceElevator.MovementControlRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class MovementControlRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int direction;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public RV_Elevator.ServiceReferenceElevator.ArrayOfInt requests;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int floor;
+        
+        public MovementControlRequestBody() {
+        }
+        
+        public MovementControlRequestBody(int direction, RV_Elevator.ServiceReferenceElevator.ArrayOfInt requests, int floor) {
+            this.direction = direction;
+            this.requests = requests;
+            this.floor = floor;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class MovementControlResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="MovementControlResponse", Namespace="http://tempuri.org/", Order=0)]
+        public RV_Elevator.ServiceReferenceElevator.MovementControlResponseBody Body;
+        
+        public MovementControlResponse() {
+        }
+        
+        public MovementControlResponse(RV_Elevator.ServiceReferenceElevator.MovementControlResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class MovementControlResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool MovementControlResult;
+        
+        public MovementControlResponseBody() {
+        }
+        
+        public MovementControlResponseBody(bool MovementControlResult) {
+            this.MovementControlResult = MovementControlResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
     public interface Service1SoapChannel : RV_Elevator.ServiceReferenceElevator.Service1Soap, System.ServiceModel.IClientChannel {
     }
@@ -128,8 +213,19 @@ namespace RV_Elevator.ServiceReferenceElevator {
             return retVal.Body.HelloWorldResult;
         }
         
-        public void MovementControl() {
-            base.Channel.MovementControl();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        RV_Elevator.ServiceReferenceElevator.MovementControlResponse RV_Elevator.ServiceReferenceElevator.Service1Soap.MovementControl(RV_Elevator.ServiceReferenceElevator.MovementControlRequest request) {
+            return base.Channel.MovementControl(request);
+        }
+        
+        public bool MovementControl(int direction, RV_Elevator.ServiceReferenceElevator.ArrayOfInt requests, int floor) {
+            RV_Elevator.ServiceReferenceElevator.MovementControlRequest inValue = new RV_Elevator.ServiceReferenceElevator.MovementControlRequest();
+            inValue.Body = new RV_Elevator.ServiceReferenceElevator.MovementControlRequestBody();
+            inValue.Body.direction = direction;
+            inValue.Body.requests = requests;
+            inValue.Body.floor = floor;
+            RV_Elevator.ServiceReferenceElevator.MovementControlResponse retVal = ((RV_Elevator.ServiceReferenceElevator.Service1Soap)(this)).MovementControl(inValue);
+            return retVal.Body.MovementControlResult;
         }
         
         public bool DoorControl(int open, double floor, int peopletime) {
@@ -142,6 +238,10 @@ namespace RV_Elevator.ServiceReferenceElevator {
         
         public bool Alarm(int weight, int time) {
             return base.Channel.Alarm(weight, time);
+        }
+        
+        public bool Sensor(int people) {
+            return base.Channel.Sensor(people);
         }
     }
 }

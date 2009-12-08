@@ -16,6 +16,17 @@ namespace RV_Elevator
     {
         public int DoorTimer1 = 0;
         public int PeopleTimer1 = 0;
+        public int ElevatorTimer1 = 0;
+        public int ElevatorDirection1 = 0;
+        //this handles requests from outside the elevator
+        //requests[0] is the direction elevator is traveling
+        //-1 down 0 none 1 up 2 both
+        public int[] requests = new int[] {0,0,0,0,0,0};
+        //represents requests to stop at floor form inside elevator
+        public int[] stops = new int[] { 0, 0, 0, 0, 0 };
+        public int floor = 1;
+        string password = "not password";
+
         RV_Elevator.ServiceReferenceElevator.Service1SoapClient ElevatorService = new RV_Elevator.ServiceReferenceElevator.Service1SoapClient("Service1Soap");
 
 
@@ -195,6 +206,120 @@ namespace RV_Elevator
                 }
                 else Door_Status_Text.Text = "Closed";
             }
+        }
+
+        private void timerElevator1_Tick(object sender, EventArgs e)
+        {
+            ElevatorTimer1++;
+            //-1 down 0 stationary 1 up
+            if (ElevatorDirection1 == -1)
+            { 
+            
+            }
+            if (ElevatorDirection1 == 0)
+            {
+
+            }
+            if (ElevatorDirection1 == 1)
+            {
+
+            }
+            Invalidate();
+            //need to do some sort of stop logic
+            if (Door_Status_Text.Text.Equals("Closed"))// == 0)
+            {
+
+                timerElevator1.Stop();
+            }
+        }
+
+        private void Weight_Text_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Down5_Button_Click(object sender, EventArgs e)
+        {
+            requests[5] = -1;
+        }
+
+        private void Down4_Button_Click(object sender, EventArgs e)
+        {
+            if (requests[4] == 0)
+                requests[4] = -1;
+            else
+                requests[4] = 2;
+        }
+
+        private void Down3_Button_Click(object sender, EventArgs e)
+        {
+            if (requests[3] == 0)
+                requests[3] = -1;
+            else
+                requests[3] = 2;
+        }
+
+        private void Down2_Button_Click(object sender, EventArgs e)
+        {
+            if (requests[2] == 0)
+                requests[2] = -1;
+            else
+                requests[2] = 2;
+        }
+
+        private void Up1_Button_Click(object sender, EventArgs e)
+        {
+            requests[1] = 1;
+        }
+
+        private void Up2_Button_Click(object sender, EventArgs e)
+        {
+            if (requests[2] == 0)
+                requests[2] = 1;
+            else
+                requests[2] = 2;
+        }
+
+        private void Up3_Button_Click(object sender, EventArgs e)
+        {
+            if (requests[3] == 0)
+                requests[3] = 1;
+            else
+                requests[3] = 2;
+        }
+
+        private void UP4_Button_Click(object sender, EventArgs e)
+        {
+            if (requests[3] == 0)
+                requests[3] = 1;
+            else
+                requests[3] = 2;
+        }
+
+        private void Floor5_Button_Click(object sender, EventArgs e)
+        {
+            if (Password_Text.Text.Equals(password))
+                stops[4] = 1;
+        }
+
+        private void Floor4_Button_Click(object sender, EventArgs e)
+        {
+            stops[3] = 1;
+        }
+
+        private void Floor1_Button_Click(object sender, EventArgs e)
+        {
+            stops[0] = 1;
+        }
+
+        private void Floor2_Button_Click(object sender, EventArgs e)
+        {
+            stops[1] = 1;
+        }
+
+        private void Floor3_Button_Click(object sender, EventArgs e)
+        {
+            stops[2] = 1;
         }
 
         

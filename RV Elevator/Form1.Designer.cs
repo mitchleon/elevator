@@ -134,6 +134,7 @@
             this.Exception_Text2 = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
+            this.timerElevator1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -185,6 +186,7 @@
             this.Floor1_Button.TabIndex = 5;
             this.Floor1_Button.Text = "1st Floor";
             this.Floor1_Button.UseVisualStyleBackColor = true;
+            this.Floor1_Button.Click += new System.EventHandler(this.Floor1_Button_Click);
             // 
             // label4
             // 
@@ -203,6 +205,7 @@
             this.Floor2_Button.TabIndex = 7;
             this.Floor2_Button.Text = "2nd Floor";
             this.Floor2_Button.UseVisualStyleBackColor = true;
+            this.Floor2_Button.Click += new System.EventHandler(this.Floor2_Button_Click);
             // 
             // Floor3_Button
             // 
@@ -212,6 +215,7 @@
             this.Floor3_Button.TabIndex = 8;
             this.Floor3_Button.Text = "3rd Floor";
             this.Floor3_Button.UseVisualStyleBackColor = true;
+            this.Floor3_Button.Click += new System.EventHandler(this.Floor3_Button_Click);
             // 
             // Floor4_Button
             // 
@@ -221,6 +225,7 @@
             this.Floor4_Button.TabIndex = 9;
             this.Floor4_Button.Text = "4th Floor";
             this.Floor4_Button.UseVisualStyleBackColor = true;
+            this.Floor4_Button.Click += new System.EventHandler(this.Floor4_Button_Click);
             // 
             // Floor5_Button
             // 
@@ -230,6 +235,7 @@
             this.Floor5_Button.TabIndex = 10;
             this.Floor5_Button.Text = "5th Floor";
             this.Floor5_Button.UseVisualStyleBackColor = true;
+            this.Floor5_Button.Click += new System.EventHandler(this.Floor5_Button_Click);
             // 
             // label5
             // 
@@ -304,6 +310,7 @@
             this.Weight_Text.Size = new System.Drawing.Size(100, 20);
             this.Weight_Text.TabIndex = 18;
             this.Weight_Text.Text = "100";
+            this.Weight_Text.TextChanged += new System.EventHandler(this.Weight_Text_TextChanged);
             // 
             // Wait_Time_Text
             // 
@@ -427,6 +434,7 @@
             this.Down5_Button.TabIndex = 32;
             this.Down5_Button.Text = "down";
             this.Down5_Button.UseVisualStyleBackColor = true;
+            this.Down5_Button.Click += new System.EventHandler(this.Down5_Button_Click);
             // 
             // Down2_Button
             // 
@@ -436,6 +444,7 @@
             this.Down2_Button.TabIndex = 33;
             this.Down2_Button.Text = "down";
             this.Down2_Button.UseVisualStyleBackColor = true;
+            this.Down2_Button.Click += new System.EventHandler(this.Down2_Button_Click);
             // 
             // Down3_Button
             // 
@@ -445,6 +454,7 @@
             this.Down3_Button.TabIndex = 34;
             this.Down3_Button.Text = "down";
             this.Down3_Button.UseVisualStyleBackColor = true;
+            this.Down3_Button.Click += new System.EventHandler(this.Down3_Button_Click);
             // 
             // Down4_Button
             // 
@@ -454,6 +464,7 @@
             this.Down4_Button.TabIndex = 35;
             this.Down4_Button.Text = "down";
             this.Down4_Button.UseVisualStyleBackColor = true;
+            this.Down4_Button.Click += new System.EventHandler(this.Down4_Button_Click);
             // 
             // UP4_Button
             // 
@@ -463,6 +474,7 @@
             this.UP4_Button.TabIndex = 37;
             this.UP4_Button.Text = "Up";
             this.UP4_Button.UseVisualStyleBackColor = true;
+            this.UP4_Button.Click += new System.EventHandler(this.UP4_Button_Click);
             // 
             // Up1_Button
             // 
@@ -472,6 +484,7 @@
             this.Up1_Button.TabIndex = 38;
             this.Up1_Button.Text = "Up";
             this.Up1_Button.UseVisualStyleBackColor = true;
+            this.Up1_Button.Click += new System.EventHandler(this.Up1_Button_Click);
             // 
             // Up2_Button
             // 
@@ -481,6 +494,7 @@
             this.Up2_Button.TabIndex = 39;
             this.Up2_Button.Text = "Up";
             this.Up2_Button.UseVisualStyleBackColor = true;
+            this.Up2_Button.Click += new System.EventHandler(this.Up2_Button_Click);
             // 
             // Up3_Button
             // 
@@ -490,6 +504,7 @@
             this.Up3_Button.TabIndex = 40;
             this.Up3_Button.Text = "Up";
             this.Up3_Button.UseVisualStyleBackColor = true;
+            this.Up3_Button.Click += new System.EventHandler(this.Up3_Button_Click);
             // 
             // Add_Elevator
             // 
@@ -1084,6 +1099,7 @@
             this.Exception_Text2.Name = "Exception_Text2";
             this.Exception_Text2.Size = new System.Drawing.Size(100, 20);
             this.Exception_Text2.TabIndex = 105;
+            this.Exception_Text2.Visible = false;
             // 
             // label45
             // 
@@ -1102,6 +1118,11 @@
             this.label46.Size = new System.Drawing.Size(110, 13);
             this.label46.TabIndex = 107;
             this.label46.Text = "Exceptions Elevator 2";
+            this.label46.Visible = false;
+            // 
+            // timerElevator1
+            // 
+            this.timerElevator1.Tick += new System.EventHandler(this.timerElevator1_Tick);
             // 
             // Form1
             // 
@@ -1325,6 +1346,7 @@
         private System.Windows.Forms.TextBox Exception_Text2;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Timer timerElevator1;
     }
 }
 

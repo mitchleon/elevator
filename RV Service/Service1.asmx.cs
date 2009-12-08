@@ -24,8 +24,43 @@ namespace RV_Service
         }
 
         [WebMethod]
-        public void MovementControl() //tye
+        public bool MovementControl(int direction, int[] requests, int floor)
         {
+            //true means tell elevator to move false means tell the elevator not to
+            //this is early untested logic and only handle going up checks
+            if (direction == 0)
+                return true;
+            else if (requests[1] == 1 && floor == 1)
+                return true;
+            else if (requests[2] == (1 | 2) && floor <= 2)
+            {
+                if (direction == 1)
+                    return true;
+                else
+                    return false;
+            }
+            else if (requests[3] == (1 | 2) && floor <= 3)
+            {
+                if (direction == 1)
+                    return true;
+                else
+                    return false;
+            }
+            else if (requests[4] == (1 | 2) && floor <= 4)
+            {
+                if (direction == 1)
+                    return true;
+                else
+                    return false;
+            }
+            else if (requests[5] == -1 && floor == 5)
+            {
+               return true;
+                
+            }
+            else
+                return false;
+
             /*
              * need to keep track of the following for service to work:
              * if door open do not move
@@ -33,8 +68,8 @@ namespace RV_Service
              * incrment floor if moving by .25 every second or so
              * which way are we going to go
              * The direction of the elevator will be determined by an array[6]
-             * array[0] will represent the state 0 down 1 not moving 2 up
-             * array[1-5] will represent request 0 none 1 up 2 down 3 both up and down
+             * array[0] will represent the state -1 down 0 not moving 1 up
+             * array[1-5] will represent request 0 none 1 up -1 down 2 both up and down
              * the easiest way to handle the requests is to handle all requests in current direction that are ahead first
              * then turn around when all completed.  
              * so all up then all down and repeat as neccisary
@@ -61,7 +96,8 @@ namespace RV_Service
             }
             else if (open == 0)
             {
-                if (peopletime > 0)
+
+                if (Sensor(peopletime))
                     return false;
                 else
                     return true;
@@ -84,6 +120,16 @@ namespace RV_Service
             else if (time > 1000)
                 return true;
             else return false;
+        }
+
+        [WebMethod]
+        public bool Sensor(int people)
+        {
+            if (people > 0)
+                return false;
+            else
+                return true;
+
         }
         //test
     }

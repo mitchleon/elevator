@@ -13,10 +13,25 @@
         </s:complexType>
       </s:element>
       <s:element name="MovementControl">
-        <s:complexType />
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="direction" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="requests" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="floor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
       </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="MovementControlResponse">
-        <s:complexType />
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MovementControlResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
       </s:element>
       <s:element name="DoorControl">
         <s:complexType>
@@ -55,6 +70,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Sensor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="people" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SensorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SensorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -87,6 +116,12 @@
   <wsdl:message name="AlarmSoapOut">
     <wsdl:part name="parameters" element="tns:AlarmResponse" />
   </wsdl:message>
+  <wsdl:message name="SensorSoapIn">
+    <wsdl:part name="parameters" element="tns:Sensor" />
+  </wsdl:message>
+  <wsdl:message name="SensorSoapOut">
+    <wsdl:part name="parameters" element="tns:SensorResponse" />
+  </wsdl:message>
   <wsdl:portType name="Service1Soap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -107,6 +142,10 @@
     <wsdl:operation name="Alarm">
       <wsdl:input message="tns:AlarmSoapIn" />
       <wsdl:output message="tns:AlarmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sensor">
+      <wsdl:input message="tns:SensorSoapIn" />
+      <wsdl:output message="tns:SensorSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
@@ -156,6 +195,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Sensor">
+      <soap:operation soapAction="http://tempuri.org/Sensor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -197,6 +245,15 @@
     </wsdl:operation>
     <wsdl:operation name="Alarm">
       <soap12:operation soapAction="http://tempuri.org/Alarm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sensor">
+      <soap12:operation soapAction="http://tempuri.org/Sensor" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
