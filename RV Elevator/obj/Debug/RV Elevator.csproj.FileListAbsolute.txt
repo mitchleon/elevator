@@ -1,9 +1,0 @@
-C:\Users\tye\Documents\Visual Studio 2008\Projects\elevatorrepo\RV Elevator\bin\Debug\RV Elevator.exe
-C:\Users\tye\Documents\Visual Studio 2008\Projects\elevatorrepo\RV Elevator\bin\Debug\RV Elevator.pdb
-C:\Users\tye\Documents\Visual Studio 2008\Projects\elevatorrepo\RV Elevator\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\tye\Documents\Visual Studio 2008\Projects\elevatorrepo\RV Elevator\obj\Debug\RV_Elevator.Properties.Resources.resources
-C:\Users\tye\Documents\Visual Studio 2008\Projects\elevatorrepo\RV Elevator\obj\Debug\RV Elevator.csproj.GenerateResource.Cache
-C:\Users\tye\Documents\Visual Studio 2008\Projects\elevatorrepo\RV Elevator\obj\Debug\RV Elevator.exe
-C:\Users\tye\Documents\Visual Studio 2008\Projects\elevatorrepo\RV Elevator\obj\Debug\RV Elevator.pdb
-C:\Users\tye\Documents\Visual Studio 2008\Projects\elevatorrepo\RV Elevator\obj\Debug\RV_Elevator.Form1.resources
-C:\Users\tye\Documents\Visual Studio 2008\Projects\elevatorrepo\RV Elevator\bin\Debug\RV Elevator.exe.config
