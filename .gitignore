@@ -1,2 +1,6 @@
+*.suo
 *.exe
 *.wav
+*.FileListAbsolute.txt
+RV\ Elevator/bin/*
+RV\ Service/bin/*
